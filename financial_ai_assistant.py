@@ -182,10 +182,8 @@ div[data-testid="stFileUploaderDropzone"] * {
 }
 
 /* Upload text */
-div[data-testid="stFileUploaderDropzone"] p,
-div[data-testid="stFileUploaderDropzone"] span,
-div[data-testid="stFileUploaderDropzone"] small {
-    color: #f8fafc !important;
+div[data-testid="stFileUploaderDropzone"] * {
+    color: #000000 !important;
     opacity: 1 !important;
 }
 
