@@ -13,12 +13,14 @@ st.set_page_config(
 )
 
 # ---------------------------------------------------
-# CUSTOM CSS
+# CLEAN STREAMLIT CLOUD CSS
 # ---------------------------------------------------
+
 st.markdown("""
 <style>
+
 /* ---------------------------------------------------
-   MAIN APP
+   APP BACKGROUND
 --------------------------------------------------- */
 
 .stApp {
@@ -27,7 +29,7 @@ st.markdown("""
 }
 
 /* ---------------------------------------------------
-   HIDE STREAMLIT HEADER
+   HIDE HEADER
 --------------------------------------------------- */
 
 header[data-testid="stHeader"] {
@@ -47,17 +49,8 @@ section[data-testid="stSidebar"] {
     border-right: 1px solid #1e293b;
 }
 
-section[data-testid="stSidebar"] h1,
-section[data-testid="stSidebar"] h2,
-section[data-testid="stSidebar"] h3 {
-    color: #f8fafc !important;
-}
-
-section[data-testid="stSidebar"] p,
-section[data-testid="stSidebar"] li,
-section[data-testid="stSidebar"] label,
-section[data-testid="stSidebar"] div {
-    color: #cbd5e1 !important;
+section[data-testid="stSidebar"] * {
+    color: #e2e8f0 !important;
 }
 
 /* ---------------------------------------------------
@@ -74,13 +67,145 @@ section[data-testid="stSidebar"] div {
 
 .subtitle {
     text-align: center;
-    color: #dbeafe;
+    color: #cbd5e1;
     margin-bottom: 30px;
     font-size: 18px;
 }
 
 /* ---------------------------------------------------
-   SUCCESS BOX
+   TEXT
+--------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6,
+p, span, label, li, div {
+    color: #f8fafc;
+}
+
+/* ---------------------------------------------------
+   INPUT LABELS
+--------------------------------------------------- */
+
+.stTextInput label {
+    color: #f8fafc !important;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------
+   INPUT BOXES
+--------------------------------------------------- */
+
+div[data-baseweb="input"] {
+    background-color: #1e293b !important;
+    border: 1px solid #64748b !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Input text */
+div[data-baseweb="input"] input {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Placeholder */
+div[data-baseweb="input"] input::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+}
+
+/* Remove browser password junk */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none !important;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-password-toggle-button {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Remove right-side white area */
+div[data-baseweb="input"] > div {
+    background: transparent !important;
+}
+
+/* Password eye button */
+div[data-baseweb="input"] button {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 10px 0 6px !important;
+    min-width: auto !important;
+}
+
+/* Eye icon */
+div[data-baseweb="input"] button svg {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    width: 18px !important;
+    height: 18px !important;
+}
+
+/* Remove black tooltip bubble */
+div[data-baseweb="popover"],
+div[role="tooltip"] {
+    display: none !important;
+}
+
+/* ---------------------------------------------------
+   FILE UPLOADER
+--------------------------------------------------- */
+
+section[data-testid="stFileUploader"] {
+    background-color: #111827 !important;
+    border: 1px solid #334155 !important;
+    border-radius: 14px !important;
+    padding: 18px !important;
+}
+
+/* Dropzone */
+div[data-testid="stFileUploaderDropzone"] {
+    background-color: #1e293b !important;
+    border: 2px dashed #64748b !important;
+    border-radius: 12px !important;
+}
+
+/* Remove white inner backgrounds */
+div[data-testid="stFileUploaderDropzone"] * {
+    background: transparent !important;
+}
+
+/* Upload text */
+div[data-testid="stFileUploaderDropzone"] p,
+div[data-testid="stFileUploaderDropzone"] span,
+div[data-testid="stFileUploaderDropzone"] small {
+    color: #f8fafc !important;
+    opacity: 1 !important;
+}
+
+/* Upload button */
+section[data-testid="stFileUploader"] button {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+}
+
+/* Upload button hover */
+section[data-testid="stFileUploader"] button:hover {
+    background-color: #1d4ed8 !important;
+    color: #ffffff !important;
+}
+
+/* ---------------------------------------------------
+   SUCCESS / INFO
 --------------------------------------------------- */
 
 .success-box {
@@ -89,8 +214,15 @@ section[data-testid="stSidebar"] div {
     border-radius: 10px;
     color: #dcfce7;
     font-weight: 600;
-    margin-bottom: 20px;
     border: 1px solid #22c55e;
+    margin-bottom: 20px;
+}
+
+div[data-baseweb="notification"] {
+    background-color: #172554 !important;
+    border: 1px solid #2563eb !important;
+    border-radius: 12px !important;
+    color: #dbeafe !important;
 }
 
 /* ---------------------------------------------------
@@ -102,192 +234,10 @@ section[data-testid="stSidebar"] div {
     padding: 20px;
     border-radius: 16px;
     border-left: 6px solid #4cc9f0;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #f8fafc;
-    margin-top: 15px;
     border: 1px solid #334155;
-}
-
-/* ---------------------------------------------------
-   INPUT LABEL
---------------------------------------------------- */
-
-.stTextInput label {
-    color: #f8fafc !important;
-    font-weight: 600;
-}
-
-/* ---------------------------------------------------
-   INPUT CONTAINER
---------------------------------------------------- */
-
-div[data-baseweb="input"] {
-    background-color: #1e293b !important;
-    border-radius: 10px !important;
-    border: 1px solid #64748b !important;
-}
-
-/* ---------------------------------------------------
-   INPUT FIELD
---------------------------------------------------- */
-
-.stTextInput input {
-    background-color: #1e293b !important;
-    color: #f8fafc !important;
-    border-radius: 10px !important;
-    border: none !important;
-}
-
-/* ---------------------------------------------------
-   PLACEHOLDER TEXT
---------------------------------------------------- */
-
-.stTextInput input::placeholder {
-    color: #94a3b8 !important;
-    opacity: 1 !important;
-}
-
-/* ---------------------------------------------------
-   PASSWORD TOGGLE FIX
---------------------------------------------------- */
-
-# Replace the PASSWORD TOGGLE FIX section with:
-
-div[data-baseweb="base-input"] {
-    background-color: #1e293b !important;
-}
-
-div[data-baseweb="base-input"] > div:last-child {
-    background-color: #1e293b !important;
-    border: none !important;
-    border-left: none !important;
-    padding-right: 10px !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-button[title="View password text"],
-button[title="Hide password text"] {
-    background-color: #1e293b !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    min-width: 0 !important;
-    box-shadow: none !important;
-    color: #ffffff !important;
-}
-
-button[title="View password text"] svg,
-button[title="Hide password text"] svg {
-    fill: #ffffff !important;
-    color: #ffffff !important;
-    stroke: #ffffff !important;
-    width: 20px !important;
-    height: 20px !important;
-    opacity: 1 !important;
-}
-
-button[title="View password text"]:hover,
-button[title="Hide password text"]:hover {
-    background-color: #1e293b !important;
-}
-
-                       
-/* ---------------------------------------------------
-   FILE UPLOADER CONTAINER
---------------------------------------------------- */
-
-section[data-testid="stFileUploader"],
-section[data-testid="stFileUploader"] > div,
-section[data-testid="stFileUploader"] > div > div {
-    background-color: #111827 !important;
-}
-
-section[data-testid="stFileUploader"] {
-    padding: 18px !important;
-    border-radius: 14px !important;
-    border: 1px solid #334155 !important;
-}
-
-section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"],
-section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] > div {
-    background-color: #1e293b !important;
-    border: 2px dashed #64748b !important;
-    border-radius: 12px !important;
-}
-
-/* ---------------------------------------------------
-   DROPZONE
---------------------------------------------------- */
-
-section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] {
-    background-color: #1e293b !important;
-    border: 2px dashed #64748b !important;
-    border-radius: 12px !important;
-}
-
-/* ---------------------------------------------------
-   UPLOADER TEXT
---------------------------------------------------- */
-
-section[data-testid="stFileUploader"] small,
-section[data-testid="stFileUploader"] span,
-section[data-testid="stFileUploader"] p,
-section[data-testid="stFileUploader"] label,
-section[data-testid="stFileUploader"] div {
-    color: #e2e8f0 !important;
-    opacity: 1 !important;
-}
-
-/* ---------------------------------------------------
-   UPLOAD BUTTON
---------------------------------------------------- */
-
-section[data-testid="stFileUploader"] button {
-    background-color: #2563eb !important;
-    color: #ffffff !important;
-    border-radius: 8px !important;
-    border: none !important;
-    font-weight: 600 !important;
-    opacity: 1 !important;
-}
-
-/* ---------------------------------------------------
-   BUTTON HOVER
---------------------------------------------------- */
-
-section[data-testid="stFileUploader"] button:hover {
-    background-color: #1d4ed8 !important;
-    color: #ffffff !important;
-}
-
-/* ---------------------------------------------------
-   DISABLED BUTTON
---------------------------------------------------- */
-
-section[data-testid="stFileUploader"] button:disabled {
-    background-color: #d1d5db !important;
-    color: #111827 !important;
-    border: 1px solid #9ca3af !important;
-    opacity: 1 !important;
-}
-
-/* Upload icon */
-section[data-testid="stFileUploader"] button:disabled svg {
-    fill: #111827 !important;
-    color: #111827 !important;
-}
-            
-/* ---------------------------------------------------
-   INFO BOXES
---------------------------------------------------- */
-
-div[data-baseweb="notification"] {
-    background-color: #172554 !important;
-    color: #dbeafe !important;
-    border: 1px solid #2563eb !important;
-    border-radius: 12px !important;
+    color: #f8fafc;
+    line-height: 1.7;
+    margin-top: 15px;
 }
 
 /* ---------------------------------------------------
@@ -306,31 +256,14 @@ div[data-baseweb="notification"] {
 --------------------------------------------------- */
 
 div[role="radiogroup"] label {
-    background-color: #1e293b;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid #334155;
-}
-
-/* ---------------------------------------------------
-   HEADINGS
---------------------------------------------------- */
-
-h1, h2, h3 {
-    color: #f8fafc !important;
-}
-
-/* ---------------------------------------------------
-   GENERAL TEXT
---------------------------------------------------- */
-
-p, label {
-    color: #e2e8f0 !important;
+    background-color: #1e293b !important;
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
+    padding: 10px 14px !important;
 }
 
 </style>
 """, unsafe_allow_html=True)
-
 # ---------------------------------------------------
 # HEADER
 # ---------------------------------------------------
