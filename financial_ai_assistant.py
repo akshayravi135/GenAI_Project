@@ -17,239 +17,275 @@ st.set_page_config(
 # ---------------------------------------------------
 st.markdown("""
 <style>
+/* ---------------------------------------------------
+   MAIN APP
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       MAIN APP
-    --------------------------------------------------- */
+.stApp {
+    background: linear-gradient(to right, #0b1220, #172033);
+    color: #f8fafc;
+}
 
-    .stApp {
-        background: linear-gradient(to right, #0b1220, #172033);
-        color: #f8fafc;
-    }
+/* ---------------------------------------------------
+   HIDE STREAMLIT HEADER
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       HIDE STREAMLIT HEADER
-    --------------------------------------------------- */
+header[data-testid="stHeader"] {
+    display: none;
+}
 
-    header[data-testid="stHeader"] {
-        display: none;
-    }
+.block-container {
+    padding-top: 2rem;
+}
 
-    .block-container {
-        padding-top: 2rem;
-    }
+/* ---------------------------------------------------
+   SIDEBAR
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       SIDEBAR
-    --------------------------------------------------- */
+section[data-testid="stSidebar"] {
+    background-color: #020617;
+    border-right: 1px solid #1e293b;
+}
 
-    section[data-testid="stSidebar"] {
-        background-color: #020617;
-        border-right: 1px solid #1e293b;
-    }
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #f8fafc !important;
+}
 
-    section[data-testid="stSidebar"] h1,
-    section[data-testid="stSidebar"] h2,
-    section[data-testid="stSidebar"] h3 {
-        color: #f8fafc !important;
-    }
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] li,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] div {
+    color: #cbd5e1 !important;
+}
 
-    section[data-testid="stSidebar"] p,
-    section[data-testid="stSidebar"] li,
-    section[data-testid="stSidebar"] label,
-    section[data-testid="stSidebar"] div {
-        color: #cbd5e1 !important;
-    }
+/* ---------------------------------------------------
+   TITLES
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       TITLES
-    --------------------------------------------------- */
+.main-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #4cc9f0;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-    .main-title {
-        font-size: 42px;
-        font-weight: 800;
-        color: #4cc9f0;
-        text-align: center;
-        margin-bottom: 10px;
-    }
+.subtitle {
+    text-align: center;
+    color: #dbeafe;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
 
-    .subtitle {
-        text-align: center;
-        color: #dbeafe;
-        margin-bottom: 30px;
-        font-size: 18px;
-    }
+/* ---------------------------------------------------
+   SUCCESS BOX
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       SUCCESS BOX
-    --------------------------------------------------- */
+.success-box {
+    background-color: #14532d;
+    padding: 12px;
+    border-radius: 10px;
+    color: #dcfce7;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid #22c55e;
+}
 
-    .success-box {
-        background-color: #14532d;
-        padding: 12px;
-        border-radius: 10px;
-        color: #dcfce7;
-        font-weight: 600;
-        margin-bottom: 20px;
-        border: 1px solid #22c55e;
-    }
+/* ---------------------------------------------------
+   ANSWER BOX
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       ANSWER BOX
-    --------------------------------------------------- */
+.answer-box {
+    background-color: #111827;
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 6px solid #4cc9f0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #f8fafc;
+    margin-top: 15px;
+    border: 1px solid #334155;
+}
 
-    .answer-box {
-        background-color: #111827;
-        padding: 20px;
-        border-radius: 16px;
-        border-left: 6px solid #4cc9f0;
-        font-size: 16px;
-        line-height: 1.7;
-        color: #f8fafc;
-        margin-top: 15px;
-        border: 1px solid #334155;
-    }
+/* ---------------------------------------------------
+   INPUT LABEL
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       INPUT LABEL
-    --------------------------------------------------- */
+.stTextInput label {
+    color: #f8fafc !important;
+    font-weight: 600;
+}
 
-    .stTextInput label {
-        color: #f8fafc !important;
-        font-weight: 600;
-    }
+/* ---------------------------------------------------
+   INPUT CONTAINER
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       INPUT CONTAINER
-    --------------------------------------------------- */
+div[data-baseweb="input"] {
+    background-color: #1e293b !important;
+    border-radius: 10px !important;
+    border: 1px solid #64748b !important;
+}
 
-    div[data-baseweb="input"] {
-        background-color: #1e293b !important;
-        border-radius: 10px !important;
-        border: 1px solid #64748b !important;
-    }
+/* ---------------------------------------------------
+   INPUT FIELD
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       INPUT FIELD
-    --------------------------------------------------- */
+.stTextInput input {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border-radius: 10px !important;
+    border: none !important;
+}
 
-    .stTextInput input {
-        background-color: #1e293b !important;
-        color: #f8fafc !important;
-        border-radius: 10px !important;
-        border: none !important;
-    }
+/* ---------------------------------------------------
+   PLACEHOLDER TEXT
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       PLACEHOLDER TEXT
-    --------------------------------------------------- */
+.stTextInput input::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1 !important;
+}
 
-    .stTextInput input::placeholder {
-        color: #94a3b8 !important;
-        opacity: 1 !important;
-    }
+/* ---------------------------------------------------
+   PASSWORD TOGGLE FIX
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       PASSWORD EYE BUTTON
-    --------------------------------------------------- */
+button[title="View password text"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
 
-    .stTextInput button {
-        background-color: #1e293b !important;
-        color: #f8fafc !important;
-        border: none !important;
-    }
+button[title="View password text"]:hover {
+    background: transparent !important;
+}
 
-    /* ---------------------------------------------------
-       FILE UPLOADER CONTAINER
-    --------------------------------------------------- */
+button[title="View password text"] svg {
+    fill: #f8fafc !important;
+}
 
-    section[data-testid="stFileUploader"] {
-        background-color: #1e293b !important;
-        padding: 18px !important;
-        border-radius: 14px !important;
-        border: 1px solid #475569 !important;
-    }
+/* ---------------------------------------------------
+   FILE UPLOADER CONTAINER
+--------------------------------------------------- */
 
-    /* DRAG & DROP AREA */
-    section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] {
-        background-color: #0f172a !important;
-        border: 2px dashed #475569 !important;
-        border-radius: 12px !important;
-        color: #f8fafc !important;
-    }
+section[data-testid="stFileUploader"] {
+    background-color: #1e293b !important;
+    padding: 18px !important;
+    border-radius: 14px !important;
+    border: 1px solid #475569 !important;
+}
 
-    /* UPLOADER TEXT */
-    section[data-testid="stFileUploader"] small,
-    section[data-testid="stFileUploader"] span,
-    section[data-testid="stFileUploader"] p,
-    section[data-testid="stFileUploader"] label,
-    section[data-testid="stFileUploader"] div {
-        color: #e2e8f0 !important;
-    }
+/* ---------------------------------------------------
+   DROPZONE
+--------------------------------------------------- */
 
-    /* BROWSE FILES BUTTON */
-    section[data-testid="stFileUploader"] button {
-        background-color: #2563eb !important;
-        color: white !important;
-        border-radius: 8px !important;
-        border: none !important;
-        font-weight: 600 !important;
-    }
+section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] {
+    background-color: #0f172a !important;
+    border: 2px dashed #475569 !important;
+    border-radius: 12px !important;
+}
 
-    /* BUTTON HOVER */
-    section[data-testid="stFileUploader"] button:hover {
-        background-color: #1d4ed8 !important;
-        color: white !important;
-    }
-            
-    /* ---------------------------------------------------
-       INFO BOXES
-    --------------------------------------------------- */
+/* ---------------------------------------------------
+   UPLOADER TEXT
+--------------------------------------------------- */
 
-    div[data-baseweb="notification"] {
-        background-color: #172554 !important;
-        color: #dbeafe !important;
-        border: 1px solid #2563eb !important;
-        border-radius: 12px !important;
-    }
+section[data-testid="stFileUploader"] small,
+section[data-testid="stFileUploader"] label,
+section[data-testid="stFileUploader"] p {
+    color: #e2e8f0 !important;
+}
 
-    /* ---------------------------------------------------
-       METRICS
-    --------------------------------------------------- */
+section[data-testid="stFileUploader"] span {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
 
-    [data-testid="metric-container"] {
-        background-color: #111827;
-        border: 1px solid #334155;
-        padding: 12px;
-        border-radius: 12px;
-    }
+/* ---------------------------------------------------
+   UPLOAD BUTTON
+--------------------------------------------------- */
 
-    /* ---------------------------------------------------
-       RADIO BUTTONS
-    --------------------------------------------------- */
+section[data-testid="stFileUploader"] button {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+}
 
-    div[role="radiogroup"] label {
-        background-color: #1e293b;
-        padding: 10px 14px;
-        border-radius: 10px;
-        border: 1px solid #334155;
-    }
+/* ENABLED BUTTON */
 
-    /* ---------------------------------------------------
-       HEADINGS
-    --------------------------------------------------- */
+section[data-testid="stFileUploader"] button:not(:disabled) {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+}
 
-    h1, h2, h3 {
-        color: #f8fafc !important;
-    }
+/* DISABLED BUTTON */
 
-    /* ---------------------------------------------------
-       GENERAL TEXT
-    --------------------------------------------------- */
+section[data-testid="stFileUploader"] button:disabled {
+    background-color: #334155 !important;
+    color: #cbd5e1 !important;
+    border: 1px solid #475569 !important;
+    opacity: 1 !important;
+}
 
-    p, span, label {
-        color: #e2e8f0 !important;
-    }
+/* HOVER */
+
+section[data-testid="stFileUploader"] button:hover:not(:disabled) {
+    background-color: #1d4ed8 !important;
+}
+
+/* ---------------------------------------------------
+   INFO BOXES
+--------------------------------------------------- */
+
+div[data-baseweb="notification"] {
+    background-color: #172554 !important;
+    color: #dbeafe !important;
+    border: 1px solid #2563eb !important;
+    border-radius: 12px !important;
+}
+
+/* ---------------------------------------------------
+   METRICS
+--------------------------------------------------- */
+
+[data-testid="metric-container"] {
+    background-color: #111827;
+    border: 1px solid #334155;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/* ---------------------------------------------------
+   RADIO BUTTONS
+--------------------------------------------------- */
+
+div[role="radiogroup"] label {
+    background-color: #1e293b;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+}
+
+/* ---------------------------------------------------
+   HEADINGS
+--------------------------------------------------- */
+
+h1, h2, h3 {
+    color: #f8fafc !important;
+}
+
+/* ---------------------------------------------------
+   GENERAL TEXT
+--------------------------------------------------- */
+
+p, label {
+    color: #e2e8f0 !important;
+}
 
 </style>
 """, unsafe_allow_html=True)
