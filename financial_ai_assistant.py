@@ -152,27 +152,34 @@ div[data-baseweb="input"] {
    PASSWORD TOGGLE FIX
 --------------------------------------------------- */
 
-/* Right-side icon container */
+# Replace the PASSWORD TOGGLE FIX section with:
+
+div[data-baseweb="base-input"] {
+    background-color: #1e293b !important;
+}
+
 div[data-baseweb="base-input"] > div:last-child {
     background-color: #1e293b !important;
     border: none !important;
+    border-left: none !important;
     padding-right: 10px !important;
     display: flex !important;
     align-items: center !important;
 }
 
-/* Eye button */
-button[title="View password text"] {
-    background: transparent !important;
+button[title="View password text"],
+button[title="Hide password text"] {
+    background-color: #1e293b !important;
     border: none !important;
     padding: 0 !important;
     margin: 0 !important;
     min-width: 0 !important;
     box-shadow: none !important;
+    color: #ffffff !important;
 }
 
-/* Eye SVG */
-button[title="View password text"] svg {
+button[title="View password text"] svg,
+button[title="Hide password text"] svg {
     fill: #ffffff !important;
     color: #ffffff !important;
     stroke: #ffffff !important;
@@ -181,20 +188,33 @@ button[title="View password text"] svg {
     opacity: 1 !important;
 }
 
-/* Hover */
-button[title="View password text"]:hover {
-    background: transparent !important;
+button[title="View password text"]:hover,
+button[title="Hide password text"]:hover {
+    background-color: #1e293b !important;
 }
+
                        
 /* ---------------------------------------------------
    FILE UPLOADER CONTAINER
 --------------------------------------------------- */
 
-section[data-testid="stFileUploader"] {
+section[data-testid="stFileUploader"],
+section[data-testid="stFileUploader"] > div,
+section[data-testid="stFileUploader"] > div > div {
     background-color: #111827 !important;
+}
+
+section[data-testid="stFileUploader"] {
     padding: 18px !important;
     border-radius: 14px !important;
     border: 1px solid #334155 !important;
+}
+
+section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"],
+section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] > div {
+    background-color: #1e293b !important;
+    border: 2px dashed #64748b !important;
+    border-radius: 12px !important;
 }
 
 /* ---------------------------------------------------
