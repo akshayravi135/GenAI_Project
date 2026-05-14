@@ -153,28 +153,30 @@ div[data-baseweb="input"] {
 --------------------------------------------------- */
 
 button[title="View password text"] {
-    background: transparent !important;
-    border: none !important;
+    background-color: #e5e7eb !important;
+    border-left: 1px solid #94a3b8 !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
     box-shadow: none !important;
 }
 
 button[title="View password text"]:hover {
-    background: transparent !important;
+    background-color: #cbd5e1 !important;
 }
 
 button[title="View password text"] svg {
-    fill: #f8fafc !important;
+    fill: #111827 !important;
 }
-
+            
 /* ---------------------------------------------------
    FILE UPLOADER CONTAINER
 --------------------------------------------------- */
 
 section[data-testid="stFileUploader"] {
-    background-color: #1e293b !important;
+    background-color: #ffffff !important;
     padding: 18px !important;
     border-radius: 14px !important;
-    border: 1px solid #475569 !important;
+    border: 1px solid #cbd5e1 !important;
 }
 
 /* ---------------------------------------------------
@@ -182,8 +184,8 @@ section[data-testid="stFileUploader"] {
 --------------------------------------------------- */
 
 section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] {
-    background-color: #0f172a !important;
-    border: 2px dashed #475569 !important;
+    background-color: #ffffff !important;
+    border: 2px dashed #94a3b8 !important;
     border-radius: 12px !important;
 }
 
@@ -192,13 +194,11 @@ section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] 
 --------------------------------------------------- */
 
 section[data-testid="stFileUploader"] small,
+section[data-testid="stFileUploader"] span,
+section[data-testid="stFileUploader"] p,
 section[data-testid="stFileUploader"] label,
-section[data-testid="stFileUploader"] p {
-    color: #e2e8f0 !important;
-}
-
-section[data-testid="stFileUploader"] span {
-    color: #cbd5e1 !important;
+section[data-testid="stFileUploader"] div {
+    color: #334155 !important;
     opacity: 1 !important;
 }
 
@@ -213,31 +213,28 @@ section[data-testid="stFileUploader"] button {
     border: none !important;
     font-weight: 600 !important;
     opacity: 1 !important;
-    box-shadow: none !important;
 }
 
-/* ENABLED BUTTON */
+/* ---------------------------------------------------
+   BUTTON HOVER
+--------------------------------------------------- */
 
-section[data-testid="stFileUploader"] button:not(:disabled) {
-    background-color: #2563eb !important;
+section[data-testid="stFileUploader"] button:hover {
+    background-color: #1d4ed8 !important;
     color: #ffffff !important;
 }
 
-/* DISABLED BUTTON */
+/* ---------------------------------------------------
+   DISABLED BUTTON
+--------------------------------------------------- */
 
 section[data-testid="stFileUploader"] button:disabled {
-    background-color: #334155 !important;
-    color: #cbd5e1 !important;
-    border: 1px solid #475569 !important;
+    background-color: #cbd5e1 !important;
+    color: #475569 !important;
+    border: 1px solid #94a3b8 !important;
     opacity: 1 !important;
 }
-
-/* HOVER */
-
-section[data-testid="stFileUploader"] button:hover:not(:disabled) {
-    background-color: #1d4ed8 !important;
-}
-
+            
 /* ---------------------------------------------------
    INFO BOXES
 --------------------------------------------------- */
