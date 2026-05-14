@@ -153,19 +153,30 @@ div[data-baseweb="input"] {
 --------------------------------------------------- */
 
 button[title="View password text"] {
-    background-color: #e5e7eb !important;
-    border-left: 1px solid #94a3b8 !important;
-    border-top-right-radius: 10px !important;
-    border-bottom-right-radius: 10px !important;
+    background-color: transparent !important;
+    border: none !important;
     box-shadow: none !important;
+    padding-right: 10px !important;
+    margin-right: 0 !important;
+    min-width: auto !important;
 }
 
-button[title="View password text"]:hover {
-    background-color: #cbd5e1 !important;
+/* Remove white container spacing */
+div[data-baseweb="input"] > div:last-child {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
+/* Make eye icon white */
 button[title="View password text"] svg {
-    fill: #111827 !important;
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
+/* Prevent hover grey background */
+button[title="View password text"]:hover {
+    background-color: transparent !important;
 }
             
 /* ---------------------------------------------------
@@ -173,10 +184,10 @@ button[title="View password text"] svg {
 --------------------------------------------------- */
 
 section[data-testid="stFileUploader"] {
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     padding: 18px !important;
     border-radius: 14px !important;
-    border: 1px solid #cbd5e1 !important;
+    border: 1px solid #334155 !important;
 }
 
 /* ---------------------------------------------------
@@ -184,8 +195,8 @@ section[data-testid="stFileUploader"] {
 --------------------------------------------------- */
 
 section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] {
-    background-color: #ffffff !important;
-    border: 2px dashed #94a3b8 !important;
+    background-color: #1e293b !important;
+    border: 2px dashed #64748b !important;
     border-radius: 12px !important;
 }
 
@@ -198,7 +209,7 @@ section[data-testid="stFileUploader"] span,
 section[data-testid="stFileUploader"] p,
 section[data-testid="stFileUploader"] label,
 section[data-testid="stFileUploader"] div {
-    color: #334155 !important;
+    color: #e2e8f0 !important;
     opacity: 1 !important;
 }
 
