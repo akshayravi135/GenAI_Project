@@ -19,21 +19,21 @@ st.markdown("""
 <style>
 
     .stApp {
-        background: linear-gradient(to right, #0f172a, #1e293b);
-        color: white;
+        background: linear-gradient(to right, #0b1220, #172033);
+        color: #f8fafc;
     }
 
     .main-title {
         font-size: 42px;
         font-weight: bold;
-        color: #38bdf8;
+        color: #4cc9f0;
         text-align: center;
         margin-bottom: 10px;
     }
 
     .subtitle {
         text-align: center;
-        color: #cbd5e1;
+        color: #dbeafe;
         margin-bottom: 30px;
         font-size: 18px;
     }
@@ -48,32 +48,62 @@ st.markdown("""
     }
 
     .answer-box {
-        background-color: #0f172a;
+        background-color: #111827;
         padding: 20px;
         border-radius: 16px;
-        border-left: 6px solid #38bdf8;
+        border-left: 6px solid #4cc9f0;
         font-size: 16px;
         line-height: 1.7;
-        color: white;
+        color: #f8fafc;
         margin-top: 15px;
     }
 
     .stTextInput > div > div > input {
         background-color: #1e293b;
-        color: white;
+        color: #f8fafc;
         border-radius: 10px;
-        border: 1px solid #475569;
+        border: 1px solid #64748b;
     }
 
     section[data-testid="stFileUploader"] {
         background-color: #1e293b;
         padding: 15px;
         border-radius: 15px;
-        border: 1px solid #334155;
+        border: 1px solid #475569;
     }
 
     section[data-testid="stSidebar"] {
         background-color: #020617;
+    }
+
+    /* SIDEBAR HEADINGS */
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3 {
+        color: #f8fafc !important;
+    }
+
+    /* SIDEBAR TEXT */
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] li,
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] div {
+        color: #cbd5e1 !important;
+    }
+
+    /* INFO BOX */
+    div[data-baseweb="notification"] {
+        background-color: #172554 !important;
+        color: #dbeafe !important;
+        border: 1px solid #2563eb !important;
+    }
+
+    /* METRICS */
+    [data-testid="metric-container"] {
+        background-color: #111827;
+        border: 1px solid #334155;
+        padding: 12px;
+        border-radius: 12px;
     }
 
 </style>
