@@ -18,14 +18,56 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+    /* ---------------------------------------------------
+       MAIN APP
+    --------------------------------------------------- */
+
     .stApp {
         background: linear-gradient(to right, #0b1220, #172033);
         color: #f8fafc;
     }
 
+    /* ---------------------------------------------------
+       HIDE STREAMLIT HEADER
+    --------------------------------------------------- */
+
+    header[data-testid="stHeader"] {
+        display: none;
+    }
+
+    .block-container {
+        padding-top: 2rem;
+    }
+
+    /* ---------------------------------------------------
+       SIDEBAR
+    --------------------------------------------------- */
+
+    section[data-testid="stSidebar"] {
+        background-color: #020617;
+        border-right: 1px solid #1e293b;
+    }
+
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3 {
+        color: #f8fafc !important;
+    }
+
+    section[data-testid="stSidebar"] p,
+    section[data-testid="stSidebar"] li,
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] div {
+        color: #cbd5e1 !important;
+    }
+
+    /* ---------------------------------------------------
+       TITLES
+    --------------------------------------------------- */
+
     .main-title {
         font-size: 42px;
-        font-weight: bold;
+        font-weight: 800;
         color: #4cc9f0;
         text-align: center;
         margin-bottom: 10px;
@@ -38,6 +80,10 @@ st.markdown("""
         font-size: 18px;
     }
 
+    /* ---------------------------------------------------
+       SUCCESS BOX
+    --------------------------------------------------- */
+
     .success-box {
         background-color: #14532d;
         padding: 12px;
@@ -45,7 +91,12 @@ st.markdown("""
         color: #dcfce7;
         font-weight: 600;
         margin-bottom: 20px;
+        border: 1px solid #22c55e;
     }
+
+    /* ---------------------------------------------------
+       ANSWER BOX
+    --------------------------------------------------- */
 
     .answer-box {
         background-color: #111827;
@@ -56,14 +107,61 @@ st.markdown("""
         line-height: 1.7;
         color: #f8fafc;
         margin-top: 15px;
+        border: 1px solid #334155;
     }
 
-    .stTextInput > div > div > input {
-        background-color: #1e293b;
-        color: #f8fafc;
-        border-radius: 10px;
-        border: 1px solid #64748b;
+    /* ---------------------------------------------------
+       INPUT LABEL
+    --------------------------------------------------- */
+
+    .stTextInput label {
+        color: #f8fafc !important;
+        font-weight: 600;
     }
+
+    /* ---------------------------------------------------
+       INPUT CONTAINER
+    --------------------------------------------------- */
+
+    div[data-baseweb="input"] {
+        background-color: #1e293b !important;
+        border-radius: 10px !important;
+        border: 1px solid #64748b !important;
+    }
+
+    /* ---------------------------------------------------
+       INPUT FIELD
+    --------------------------------------------------- */
+
+    .stTextInput input {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border-radius: 10px !important;
+        border: none !important;
+    }
+
+    /* ---------------------------------------------------
+       PLACEHOLDER TEXT
+    --------------------------------------------------- */
+
+    .stTextInput input::placeholder {
+        color: #94a3b8 !important;
+        opacity: 1 !important;
+    }
+
+    /* ---------------------------------------------------
+       PASSWORD EYE BUTTON
+    --------------------------------------------------- */
+
+    .stTextInput button {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border: none !important;
+    }
+
+    /* ---------------------------------------------------
+       FILE UPLOADER
+    --------------------------------------------------- */
 
     section[data-testid="stFileUploader"] {
         background-color: #1e293b;
@@ -72,38 +170,53 @@ st.markdown("""
         border: 1px solid #475569;
     }
 
-    section[data-testid="stSidebar"] {
-        background-color: #020617;
-    }
+    /* ---------------------------------------------------
+       INFO BOXES
+    --------------------------------------------------- */
 
-    /* SIDEBAR HEADINGS */
-    section[data-testid="stSidebar"] h1,
-    section[data-testid="stSidebar"] h2,
-    section[data-testid="stSidebar"] h3 {
-        color: #f8fafc !important;
-    }
-
-    /* SIDEBAR TEXT */
-    section[data-testid="stSidebar"] p,
-    section[data-testid="stSidebar"] li,
-    section[data-testid="stSidebar"] label,
-    section[data-testid="stSidebar"] div {
-        color: #cbd5e1 !important;
-    }
-
-    /* INFO BOX */
     div[data-baseweb="notification"] {
         background-color: #172554 !important;
         color: #dbeafe !important;
         border: 1px solid #2563eb !important;
+        border-radius: 12px !important;
     }
 
-    /* METRICS */
+    /* ---------------------------------------------------
+       METRICS
+    --------------------------------------------------- */
+
     [data-testid="metric-container"] {
         background-color: #111827;
         border: 1px solid #334155;
         padding: 12px;
         border-radius: 12px;
+    }
+
+    /* ---------------------------------------------------
+       RADIO BUTTONS
+    --------------------------------------------------- */
+
+    div[role="radiogroup"] label {
+        background-color: #1e293b;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid #334155;
+    }
+
+    /* ---------------------------------------------------
+       HEADINGS
+    --------------------------------------------------- */
+
+    h1, h2, h3 {
+        color: #f8fafc !important;
+    }
+
+    /* ---------------------------------------------------
+       GENERAL TEXT
+    --------------------------------------------------- */
+
+    p, span, label {
+        color: #e2e8f0 !important;
     }
 
 </style>
