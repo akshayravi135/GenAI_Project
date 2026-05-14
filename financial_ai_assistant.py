@@ -152,39 +152,40 @@ div[data-baseweb="input"] {
    PASSWORD TOGGLE FIX
 --------------------------------------------------- */
 
+/* Right-side icon container */
+div[data-baseweb="base-input"] > div:last-child {
+    background-color: #1e293b !important;
+    border: none !important;
+    padding-right: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Eye button */
 button[title="View password text"] {
     background: transparent !important;
     border: none !important;
-    box-shadow: none !important;
-    padding: 0 12px 0 8px !important;
-    margin: 0 !important;
-    min-width: unset !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* Remove weird white area around eye icon */
-div[data-baseweb="input"] > div:last-child {
-    background: #1e293b !important;
-    border: none !important;
-    margin: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
 }
 
-/* Bright visible eye icon */
+/* Eye SVG */
 button[title="View password text"] svg {
-    fill: #f8fafc !important;
-    color: #f8fafc !important;
+    fill: #ffffff !important;
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+    width: 20px !important;
+    height: 20px !important;
     opacity: 1 !important;
-    width: 22px !important;
-    height: 22px !important;
 }
 
-/* No hover box */
+/* Hover */
 button[title="View password text"]:hover {
     background: transparent !important;
-}            
+}
+                       
 /* ---------------------------------------------------
    FILE UPLOADER CONTAINER
 --------------------------------------------------- */
@@ -250,10 +251,9 @@ section[data-testid="stFileUploader"] button:disabled {
     color: #111827 !important;
     border: 1px solid #9ca3af !important;
     opacity: 1 !important;
-    font-weight: 700 !important;
 }
 
-/* Make upload icon dark too */
+/* Upload icon */
 section[data-testid="stFileUploader"] button:disabled svg {
     fill: #111827 !important;
     color: #111827 !important;
