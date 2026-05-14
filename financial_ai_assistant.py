@@ -153,32 +153,38 @@ div[data-baseweb="input"] {
 --------------------------------------------------- */
 
 button[title="View password text"] {
-    background-color: transparent !important;
+    background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    padding-right: 10px !important;
-    margin-right: 0 !important;
-    min-width: auto !important;
-}
-
-/* Remove white container spacing */
-div[data-baseweb="input"] > div:last-child {
-    background: transparent !important;
-    padding: 0 !important;
+    padding: 0 12px 0 8px !important;
     margin: 0 !important;
+    min-width: unset !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
-/* Make eye icon white */
+/* Remove weird white area around eye icon */
+div[data-baseweb="input"] > div:last-child {
+    background: #1e293b !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Bright visible eye icon */
 button[title="View password text"] svg {
-    fill: #ffffff !important;
-    color: #ffffff !important;
+    fill: #f8fafc !important;
+    color: #f8fafc !important;
+    opacity: 1 !important;
+    width: 22px !important;
+    height: 22px !important;
 }
 
-/* Prevent hover grey background */
+/* No hover box */
 button[title="View password text"]:hover {
-    background-color: transparent !important;
-}
-            
+    background: transparent !important;
+}            
 /* ---------------------------------------------------
    FILE UPLOADER CONTAINER
 --------------------------------------------------- */
@@ -240,10 +246,17 @@ section[data-testid="stFileUploader"] button:hover {
 --------------------------------------------------- */
 
 section[data-testid="stFileUploader"] button:disabled {
-    background-color: #cbd5e1 !important;
-    color: #475569 !important;
-    border: 1px solid #94a3b8 !important;
+    background-color: #d1d5db !important;
+    color: #111827 !important;
+    border: 1px solid #9ca3af !important;
     opacity: 1 !important;
+    font-weight: 700 !important;
+}
+
+/* Make upload icon dark too */
+section[data-testid="stFileUploader"] button:disabled svg {
+    fill: #111827 !important;
+    color: #111827 !important;
 }
             
 /* ---------------------------------------------------
