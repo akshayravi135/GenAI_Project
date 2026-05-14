@@ -160,16 +160,48 @@ st.markdown("""
     }
 
     /* ---------------------------------------------------
-       FILE UPLOADER
+       FILE UPLOADER CONTAINER
     --------------------------------------------------- */
 
     section[data-testid="stFileUploader"] {
-        background-color: #1e293b;
-        padding: 15px;
-        border-radius: 15px;
-        border: 1px solid #475569;
+        background-color: #1e293b !important;
+        padding: 18px !important;
+        border-radius: 14px !important;
+        border: 1px solid #475569 !important;
     }
 
+    /* DRAG & DROP AREA */
+    section[data-testid="stFileUploader"] div[data-testid="stFileUploaderDropzone"] {
+        background-color: #0f172a !important;
+        border: 2px dashed #475569 !important;
+        border-radius: 12px !important;
+        color: #f8fafc !important;
+    }
+
+    /* UPLOADER TEXT */
+    section[data-testid="stFileUploader"] small,
+    section[data-testid="stFileUploader"] span,
+    section[data-testid="stFileUploader"] p,
+    section[data-testid="stFileUploader"] label,
+    section[data-testid="stFileUploader"] div {
+        color: #e2e8f0 !important;
+    }
+
+    /* BROWSE FILES BUTTON */
+    section[data-testid="stFileUploader"] button {
+        background-color: #2563eb !important;
+        color: white !important;
+        border-radius: 8px !important;
+        border: none !important;
+        font-weight: 600 !important;
+    }
+
+    /* BUTTON HOVER */
+    section[data-testid="stFileUploader"] button:hover {
+        background-color: #1d4ed8 !important;
+        color: white !important;
+    }
+            
     /* ---------------------------------------------------
        INFO BOXES
     --------------------------------------------------- */
